@@ -24,28 +24,28 @@ function changeLevel (level: number, player: Player) {
 
 withCategory(Category.PLAYER, ({ hack, toggle }) => {
     hack("Max Account", "Complete your account.", async (hack, player, gameData) => {
-        player.data.gold = 9000000
-        player.data.storedMemberStars = 9999999
+        player.data.gold = 90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        player.data.storedMemberStars = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
         player.data.bountyScore = 100
-        player.data.win = 1000
+        player.data.win = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
         player.data.loss = 0
         player.data.tower = 100
         for (let i = 0; i < 100; i++) {
-            player.achievements.data.progress[i] = 10
+            player.achievements.data.progress[i] = 1000
         }
         player.achievements.updated = true
         changeLevel(100, player)
         getAllPets(100, gameData, player)
-        getAllItems(player, gameData, 999)
+        getAllItems(player, gameData, 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
         success("Your account is now maxed out.")
     })
     hack("Set Gold", "Set's the amount of gold you have currently.", async (hack, player) => {
-        const value = await InputTypes.integer("Please enter the amount of gold you want to get.", 1, 9000000)
+        const value = await InputTypes.integer("Please enter the amount of gold you want to get.", 1, 90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
         player.data.gold = value
         success(`You now have ${value} gold.`)
     })
     hack("Set Level", "Set's the level of your player.", async (hack, player) => {
-        const value = await InputTypes.integer("Please enter the level you want to be.", 1, 100)
+        const value = await InputTypes.integer("Please enter the level you want to be.", 1, 100000000000000000000000000000000000000000000000000000000000000000000000000)
         changeLevel(value, player)
         success(`You are now level ${value}.`)
     })
