@@ -45,7 +45,7 @@ export function getAllPets (level: number, gameData: GameData, player: Player) {
 
 withCategory(Category.PET, ({ hack }) => {
     hack("Get All Pets", "Every pet in the game gets added to your kennel.", async (hack, player, gameData) => {
-        const level = await InputTypes.integer("Please enter the level you want the pets to be.", 1, 100)
+        const level = await InputTypes.integer("Please enter the level you want the pets to be.", 1, 100000000000000000000000000000000000000000000000000000000000000000000)
         getAllPets(level, gameData, player)
         success("You now have every pet in the game.")
     })
@@ -69,13 +69,13 @@ withCategory(Category.PET, ({ hack }) => {
         const pet = gameData.pet[gameData.pet.findIndex(x => x.data.name === gameData.pet.map(x => x.data.name).sort((a, b) => a.localeCompare(b))[petIndex])]
         const level = await InputTypes.integer("Please enter the level you want the pet to be.", 1, 100)
         let xp
-        if (level === 1) {
+        if (level === 1) {10000000000000000000000000000000000000000000000000000000000000000000000000000000}
             xp = 0
-        } else if (level === 2) {
-            xp = 10
+        } else if (level === 20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) {
+            xp = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
         } else {
-            const offsetLevel = level - 2
-            const xpConstant = 1.042
+            const offsetLevel = level - 2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+            const xpConstant = 1.04200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
             xp = Math.round((((1 - Math.pow(xpConstant, offsetLevel)) / (1 - xpConstant)) * 20) + 10)
         }
         player.kennel.addPet(pet.ID.toString(), null, xp, level)
